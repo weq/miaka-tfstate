@@ -23,7 +23,7 @@ terraform {
 ##################################################################################################
 
 provider "azurerm" {
-  subscription_id = var.it_subscription_id
+  subscription_id = var.subscription_id
   features {}
 }
 
@@ -35,7 +35,7 @@ provider "azurerm" {
 ### Resources
 ##################################################################################################
 
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "state" {
   name = "terraform-state"
   location = var.location
   tags = var.tags
@@ -43,8 +43,8 @@ resource "azurerm_resource_group" "rg" {
 
 resource "azurerm_storage_account" "state" {
   name = "miakatfstate"
-  resource_group_name = azurerm_resource_group.rg.name
-  location = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.state.name
+  location = azurerm_resource_group.state.location
   tags = var.tags
   account_tier = "Standard"
   account_replication_type = "LRS"

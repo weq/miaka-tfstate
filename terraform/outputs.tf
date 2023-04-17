@@ -1,5 +1,5 @@
 output "terraform_state_resource_group_name" {
-    value = azurerm_resource_group.rg.name
+    value = azurerm_resource_group.state.name
 }
 
 output "terraform_state_storage_account" {
