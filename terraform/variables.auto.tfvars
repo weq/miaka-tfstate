@@ -2,6 +2,6 @@ location = "eastus"
 tags = {
     ProvisionedBy = "Terraform"
     Environment = "Production"
-    Pipeline = "Github"
+    Pipeline = "Github Actions"
     Customer = "Miaka"
 }
